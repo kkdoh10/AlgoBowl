@@ -13,7 +13,6 @@ class Type(Enum):
     
 
 class Cell:
-    is_lit = False
     def __init__(self , cell_row, cell_col, is_lit: bool = False, cell_type: str = 'L') :
         self.is_lit = is_lit
         self.row = cell_row
@@ -42,11 +41,5 @@ class Cell:
     
     def __str__(self) -> str:
         return self.type.value  
-    def Light_On(self):
-        if self.type != Type.GREY and self.type != Type.GREY0 and self.type != Type.GREY1 and self.type != Type.GREY2 and self.type != Type.GREY3 and self.type != Type.GREY4:
-            self.is_lit = True
-    def Light_Off(self):
-            self.is_lit = False
-    def deepcopy(self):
-        return Cell(self.row, self.col, self.is_lit, self.type.value)
+
 

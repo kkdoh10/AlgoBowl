@@ -125,10 +125,7 @@ def objective(map, row, col):
                     down = down+1
                 if light_violation > 0: violations+=1
     return violations
-def print_map(map):
-    for r in map:
-        row = ''.join(cell.type.value for cell in r) 
-        print(row)
+
 
 def simulated_annealing(grid, rows, cols, max_iterations: int =100, cooling_rate: float =.999, initial_temp: int = 1000):
     current_grid = [row[:] for row in grid]
